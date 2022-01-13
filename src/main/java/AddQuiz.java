@@ -8,8 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class WriteQuiz {
-    public static void main(String[] args) throws IOException, ParseException {
+public class AddQuiz {
+    public void addQuiz() throws IOException, ParseException {
         char ch = 'y';
         String fileName = "./src/main/resources/QuizList.json";
         do {
@@ -19,9 +19,9 @@ public class WriteQuiz {
 
             Scanner input = new Scanner(System.in);
             System.out.println("Enter the question to be stored:");
-            quizList.put("Q.", input.next());
+            quizList.put("Q.", input.nextLine());
             System.out.println("Enter the answer of the question to be stored:");
-            quizList.put("A.", input.next());
+            quizList.put("A.", input.nextLine());
 
             JSONArray jsonArray = (JSONArray) obj;
             jsonArray.add(quizList);
@@ -33,7 +33,6 @@ public class WriteQuiz {
             file.flush();
             file.close();
             System.out.println("Saved!");
-            System.out.print(jsonArray);
             System.out.println("\nDo you want to add more?[y/n]");
             ch = input.next().charAt(0);
         }

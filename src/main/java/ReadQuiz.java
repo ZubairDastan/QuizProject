@@ -1,13 +1,25 @@
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import java.io.FileReader;
 import java.io.IOException;
 
 public class ReadQuiz {
-    public static void main(String[] args) throws IOException {
-        FileReader reader = new FileReader("MyFile.txt");
-        int character;
-        while ((character = reader.read()) != -1) {
-            System.out.print((char) character);
-        }
-        reader.close();
+    public void readQuiz () throws IOException, ParseException {
+        String fileName="./src/main/resources/QuizList.json";
+        JSONParser jsonParser = new JSONParser();
+        Object obj = jsonParser.parse(new FileReader(fileName));
+        JSONArray jsonArray = (JSONArray) obj;
+        System.out.println(jsonArray);
+        JSONObject json = (JSONObject) jsonArray.get(0);
+
+        String question = (String) json.get("Q.");
+        String answer = (String) json.get("A.");
+
+        System.out.println(question);
+        System.out.println(answer);
+
     }
 }
