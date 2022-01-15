@@ -1,3 +1,4 @@
+import com.sun.org.apache.xpath.internal.objects.XObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -15,15 +16,23 @@ public class AddQuiz {
         do {
             JSONParser jsonParser = new JSONParser();
             JSONObject quizList = new JSONObject();
-            Object obj = jsonParser.parse(new FileReader(fileName));
+            Object object = jsonParser.parse(new FileReader(fileName));
 
             Scanner input = new Scanner(System.in);
             System.out.println("Enter the question to be stored:");
             quizList.put("Q.", input.nextLine());
-            System.out.println("Enter the answer of the question to be stored:");
-            quizList.put("A.", input.nextLine());
+            System.out.println("Enter option 'a'");
+            quizList.put("(a)",input.nextLine());
+            System.out.println("Enter option 'b'");
+            quizList.put("(b)",input.nextLine());
+            System.out.println("Enter option 'c'");
+            quizList.put("(c)",input.nextLine());
+            System.out.println("Enter option 'd'");
+            quizList.put("(d)",input.nextLine());
+            System.out.println("Enter the correct answer of the question to be stored:");
+            quizList.put("Ans.", input.nextLine());
 
-            JSONArray jsonArray = (JSONArray) obj;
+            JSONArray jsonArray = (JSONArray) object;
             jsonArray.add(quizList);
             System.out.print(jsonArray);
 

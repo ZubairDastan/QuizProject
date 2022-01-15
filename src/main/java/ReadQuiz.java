@@ -13,13 +13,13 @@ public class ReadQuiz {
         Object obj = jsonParser.parse(new FileReader(fileName));
         JSONArray jsonArray = (JSONArray) obj;
         System.out.println(jsonArray);
-        JSONObject json = (JSONObject) jsonArray.get(0);
-
-        String question = (String) json.get("Q.");
-        String answer = (String) json.get("A.");
-
-        System.out.println(question);
-        System.out.println(answer);
+//        JSONObject json = (JSONObject) jsonArray.get(0);
+//
+//        String question = (String) json.get("Q.");
+//        String answer = (String) json.get("A.");
+//
+//        System.out.println(json);
+//        System.out.println(answer);
 
     }
 }
