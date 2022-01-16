@@ -1,4 +1,3 @@
-import com.sun.org.apache.xpath.internal.objects.XObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -22,13 +21,13 @@ public class AddQuiz {
             System.out.println("Enter the question to be stored:");
             quizList.put("Q.", input.nextLine());
             System.out.println("Enter option 'a'");
-            quizList.put("(a)",input.nextLine());
+            quizList.put("(a)", input.nextLine());
             System.out.println("Enter option 'b'");
-            quizList.put("(b)",input.nextLine());
+            quizList.put("(b)", input.nextLine());
             System.out.println("Enter option 'c'");
-            quizList.put("(c)",input.nextLine());
+            quizList.put("(c)", input.nextLine());
             System.out.println("Enter option 'd'");
-            quizList.put("(d)",input.nextLine());
+            quizList.put("(d)", input.nextLine());
             System.out.println("Enter the correct answer of the question to be stored:");
             quizList.put("Ans.", input.nextLine());
 
