@@ -39,7 +39,7 @@ public class MainQuizRun {
                         count++;
                     }
                 }
-                System.out.println("Your Score is " + count);
+                System.out.println("Your Score is " + count + " out of 5");
                 break;
 
             case 2:
